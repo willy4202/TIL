@@ -59,3 +59,5 @@ PR을 만들기 이전에 conflict를 방지하고 싶다면
 컨플릭트가 발생하면, main/ master에서 Pull로 최신화 해주고
 개인 브랜치로 머지하는 방식으로 업데이트 할 수 있다.
 거기서 어떤 코드를 사용할 것인지 이야기하고, 다시 push해주면 된다.
+
+![](https://velog.velcdn.com/images/willy4202/post/fec8e712-f0ef-4f81-8243-60bae1926087/image.png)
