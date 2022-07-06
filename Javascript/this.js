@@ -142,3 +142,89 @@
 // var jn = new Employee("재난", "male", "구글");
 
 // console.log(by, jn);
+
+// var numbers = [10, 20, 3, 15, 64];
+
+// var max = (min = numbers[0]);
+
+// numbers.forEach(function (number) {
+//   if (number > max) {
+//     max = number;
+//   }
+//   if (number < min) {
+//     min = number;
+//   }
+// });
+
+// console.log(max, min);
+
+// var numbers = [10, 20, 3, 15, 64];
+// var max = Math.max(...numbers);
+// var min = Math.min(...numbers);
+// console.log(max, min);
+
+// var func = function (a, b, c, d) {
+//   console.log(this, a, b, c, d);
+// };
+
+// func(1, 2, 3, 4); // Window...,1,2,3,4
+
+// var bindFunc1 = func.bind({ x: 1 });
+// bindFunc1(5, 6, 7, 8);
+
+// var bindFunc2 = func.bind({ x: 1 }, 4, 5);
+// bindFunc2(6, 7);
+// bindFunc2(8, 9);
+
+// var func = function (a, b, c, d) {
+//   console.log(this, a, b, c, d);
+// };
+
+// var bindFunc = func.bind({ x: 1 }, 4, 5);
+// console.log(func.name);
+// console.log(bindFunc.name);
+
+// call을 활용한 바인딩
+// var obj = {
+//   outer: function () {
+//     console.log(this);
+//     var innerFunc = function () {
+//       console.log(this);
+//     };
+//     innerFunc.call(this);
+//   },
+// };
+
+// obj.outer();
+
+// bind를 활용한 바인딩
+
+// var obj = {
+//   outer: function () {
+//     console.log(this);
+//     var innerFunc = () => {
+//       console.log(this);
+//     };
+//     innerFunc();
+//   },
+// };
+
+// obj.outer();
+
+var report = {
+  sum: 0,
+  count: 0,
+  add: function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.forEach(function (entry) {
+      this.sum += entry;
+      ++this.count;
+    }, this);
+  },
+  average: function () {
+    return this.sum / this.count;
+  },
+};
+
+report.add(60, 85, 95);
+console.log(report);
