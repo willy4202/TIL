@@ -10,3 +10,4 @@ var cbFunc = function () {
   if (++count > 4) clearInterval(timer);
 };
 var timer = setInterval(cbFunc, 300);
+ㄴㄴ;
