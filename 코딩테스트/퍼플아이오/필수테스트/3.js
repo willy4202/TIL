@@ -6,6 +6,7 @@ const foo = (games) => {
     else if (item[0] == item[1]) point += 1;
     return acc + point;
   }, 0);
+
   return winPoint;
 };
 
