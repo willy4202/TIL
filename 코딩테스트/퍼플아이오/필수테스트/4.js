@@ -1,21 +1,19 @@
-// const foo = (num) => {
-//   let calc = 0;
+const foo = (num) => {
+  let result = num;
+  do {
+    let sum = result
+      .toString()
+      .split("")
+      .reduce((acc, cur) => {
+        return acc + parseInt(cur);
+      }, 0);
+    result -= sum;
+  } while (result > 101);
 
-//   let sum = num
-//     .toString()
-//     .split("")
-//     .reduce((acc, curr) => acc + parseInt(curr), 0);
+  return "apple";
+};
 
-//   calc = num - sum;
-//   if (calc <= 100) {
-//     console.log("hi");
-//   } else {
-//     console.log("bye");
-//   }
-//   return calc;
-// };
-
-// console.log(foo(325));
+foo();
 
 /*
 각 자릿수를 계속 더한후 기존의 num에서 : 처리하기
@@ -135,45 +133,8 @@ kiwi 10, pear, banana, melon, pineapple,
 apple, cucumber, orange, grape, cherry,
 
 모든 과일이 10번씩,
-1,3, 24, 26, 47, 49, 68, 70, 91, 93
-*/
+kiwi : 1,3, 24, 26, 47, 49, 68, 70, 91, 93
+pear : 2,21,23,42,44,46,65,67,69,88
+apple: 9의 배수
 
-const four = (num) => {
-  let result = num;
-  do {
-    let sum = result
-      .toString()
-      .split("")
-      .reduce((acc, cur) => {
-        return acc + parseInt(cur);
-      }, 0);
-
-    result -= sum;
-  } while (result > 101);
-
-  console.log(result);
-  // TODO #1
-  // 여기까지 한 자리씩 더한 다음 원래 숫자에서 뺸 결과값, 만약 이게 100보다 크다면 한번 더 진행하기!
-
-  // TODO #2
-  // 만약 이 결과가 100보다 작다면, 그대로 과일 코드 들고와서 리턴하기
-};
-
-// console.log(four(325));
-four(325); // 99?
-four(249); // 99?
-// 인자는 무조건 두자리수로만 들어온다.
-
-/*
- do ... while문 사용
- 코드 블록을 먼저 실행하고 조건식을 평가한다. 따라서 무조건 코드 블록이 한 번 이상 실행된다.
-
- 만약, 이렇게 실행하고 나서 나온 결과값 Result가 100이하라면 과일 코드 탐색하기
- 아니라면, 계속해서 반복문 돌기
-
- 이때, 반복문에서 처음엔 파라미터가 들어오고,
- 그 다음엔 result를 쪼개서 실행해야한다.
-
- 지금은 num만 계속 잘랐다가 다시 붙이는 형태
- reduce를 써야하는걸까?
 */
