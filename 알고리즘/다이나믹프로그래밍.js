@@ -1,4 +1,4 @@
-// 다이나믹 프로그래밍을 이용해 피보나치 수열 문제 풀기
+// // 다이나믹 프로그래밍을 이용해 피보나치 수열 문제 풀기
 
 function fibo(n) {
   let arr = [0, 1];
@@ -10,4 +10,12 @@ function fibo(n) {
   return arr[n];
 }
 
-console.log(fibo(6));
+//console.log(fibo(31));
+
+function fibo_noMemo(n) {
+  if (n > 2) {
+    return fibo_noMemo(n - 2) + fibo_noMemo(n - 1);
+  } else return 1;
+}
+
+//console.log(fibo_noMemo(31));
